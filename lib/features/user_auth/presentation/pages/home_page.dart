@@ -3,6 +3,7 @@ import 'package:colusseum/features/db_helper/constants.dart';
 import 'package:colusseum/features/db_helper/mongodb.dart';
 import 'package:colusseum/features/user_auth/presentation/pages/create_page.dart';
 import 'package:colusseum/features/user_auth/presentation/pages/join_page.dart';
+import 'package:colusseum/features/user_auth/presentation/pages/login_page.dart';
 import 'package:colusseum/features/user_auth/presentation/pages/shop_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,7 @@ class _HomePageState extends State<HomePage> {
           Text("Level " + currentUserLevel.toString(), style: TextStyle(color: Color.fromARGB(255, 255, 119, 119), fontWeight: FontWeight.bold, fontSize: 25),),
           Text("Money " + currentUserCoins.toString(), style: TextStyle(color: Color.fromARGB(255, 255, 119, 119), fontWeight: FontWeight.bold, fontSize: 25),),
           Text("Bolts Of Zeus " + currentUserBolts.toString(), style: TextStyle(color: Color.fromARGB(255, 255, 119, 119), fontWeight: FontWeight.bold, fontSize: 25),),
+          Text("You may need to log out and in again to see updated stats. Winning battles gives 30 coins.", style: TextStyle(color: Color.fromARGB(255, 255, 119, 119), fontWeight: FontWeight.bold, fontSize: 10),),
           GestureDetector(
             onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const CreatePage()));},
             child: const Card(color: Color.fromARGB(224, 225, 67, 67), child: Padding(
@@ -62,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               child: Text("Start Match", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 29),),
             )),
           ),
-          const SizedBox(height: 25,),
+          // const SizedBox(height: ,),
           GestureDetector(
             onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => const JoinPage()));},
             child: const Card(color: Color.fromARGB(224, 225, 67, 67), child: Padding(
@@ -70,13 +72,21 @@ class _HomePageState extends State<HomePage> {
               child: Text("Join Match", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 29),),
             )),
           ),
-          const SizedBox(height: 25,),
+          // const SizedBox(height: 5,),
           GestureDetector(
             onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => const ShopPage()));},
             // ignore: prefer_const_constructors
             child: Card(color: Color.fromARGB(224, 225, 67, 67), child: Padding(
               padding: const EdgeInsets.all(15),
               child: const Text("Shop", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 29),),
+            )),
+          ),
+          GestureDetector(
+            onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginPage()));},
+            // ignore: prefer_const_constructors
+            child: Card(color: Color.fromARGB(224, 225, 67, 67), child: Padding(
+              padding: const EdgeInsets.all(15),
+              child: const Text("Logout", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 29),),
             )),
           ),
 
