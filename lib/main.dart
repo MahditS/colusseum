@@ -10,7 +10,7 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MongoDatabase.connect();
 
-  await Firebase.initializeApp(options: const FirebaseOptions(apiKey: "AIzaSyBnDKJCk5QMrUxxLgTM6seN_CkLVR2O_x0", appId: "1:792388898191:web:d4ada8b951975cb2760ffa", messagingSenderId: "792388898191", projectId: "colusseum-ea5ba"));
+  await Firebase.initializeApp(options: const FirebaseOptions(apiKey: "YOUR_API_KEY", appId: "1:792388898191:web:d4ada8b951975cb2760ffa", messagingSenderId: "792388898191", projectId: "colusseum-ea5ba"));
   
 
   await Firebase.initializeApp();
